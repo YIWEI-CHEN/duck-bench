@@ -1,7 +1,7 @@
 # 🦆 DUCK: Beyond Text-to-SQL — Benchmarking Cross-modal Knowledge Grounding over Enterprise Data
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-blue)](https://huggingface.co/datasets/duck-bench)
+[![Dataset](https://img.shields.io/badge/Dataset-Coming%20Soon-lightgrey)](#)
 
 **DUCK** (**D**ataverse **U**nified **C**ross-modal **K**nowledge-grounding) is a large-scale benchmark for evaluating the ability of language models to ground natural language questions over heterogeneous enterprise data. Unlike existing text-to-SQL benchmarks that focus on clean relational tables, DUCK challenges models to reason across the full spectrum of data modalities found in real-world enterprise environments.
 

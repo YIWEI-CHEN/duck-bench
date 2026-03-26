@@ -3,26 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DUCK-Bench Leaderboard</title>
+  <title>DUCK-Bench</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #333; background: #fafafa; }
+
+    /* Header */
     header { background: #1a1a2e; color: #fff; padding: 2rem 2rem 3rem; text-align: center; position: relative; }
     .logos { display: flex; align-items: center; gap: 1rem; padding-bottom: 1.5rem; }
     .logos img { height: 32px; }
-    .title-row { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 0.5rem; }
-    .title-row img { height: 100px; }
-    header h1 { font-size: 2.5rem; }
-    header p { font-size: 1.1rem; opacity: 0.85; max-width: 960px; margin: 0 auto; white-space: nowrap; }
-    .container { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
-    h2 { margin: 2rem 0 1rem; font-size: 1.5rem; }
+    .title-row { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 0.5rem; }
+    .title-row img { height: 120px; }
+    header h1 { font-size: 3rem; font-weight: 800; }
+    header p { font-size: 1.15rem; opacity: 0.85; max-width: 960px; margin: 0 auto; white-space: nowrap; }
+
+    /* Layout */
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+    section { margin-bottom: 3rem; }
+    h2 { font-size: 1.6rem; margin-bottom: 1rem; border-bottom: 2px solid #1a1a2e; padding-bottom: 0.4rem; }
+
+    /* About: two-column layout */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .about-grid p { font-size: 1.05rem; line-height: 1.7; }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+
+    /* Comparison table */
     table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
     th, td { padding: 0.75rem 1rem; text-align: center; border-bottom: 1px solid #eee; }
     th { background: #16213e; color: #fff; font-weight: 600; }
     tr:hover { background: #f5f5f5; }
-    .note { margin-top: 2rem; padding: 1rem; background: #fff3cd; border-radius: 6px; font-size: 0.95rem; }
-    footer { text-align: center; padding: 2rem; color: #888; font-size: 0.9rem; }
+    td:first-child, th:first-child { text-align: left; }
+
+    /* Modality cards */
+    .modality-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+    .modality-card { background: #fff; border-radius: 8px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .modality-card h3 { font-size: 1rem; margin-bottom: 0.4rem; color: #1a1a2e; }
+    .modality-card p { font-size: 0.9rem; color: #555; line-height: 1.5; }
+
+    /* Note */
+    .note { margin-top: 1.5rem; padding: 1rem; background: #fff3cd; border-radius: 6px; font-size: 0.95rem; }
+
+    /* Links */
     a { color: #0f3460; }
+    .btn { display: inline-block; padding: 0.6rem 1.4rem; background: #16213e; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; margin-right: 0.5rem; margin-top: 0.5rem; }
+    .btn:hover { background: #0f3460; }
+
+    /* Footer */
+    footer { text-align: center; padding: 2rem; color: #888; font-size: 0.9rem; border-top: 1px solid #eee; }
   </style>
 </head>
 <body>
@@ -33,88 +60,131 @@
     </div>
     <div class="title-row">
       <img src="duck-logo.svg" alt="DUCK">
-      <h1>DUCK-Bench Leaderboard</h1>
+      <h1>DUCK-Bench</h1>
     </div>
     <p>Beyond Text-to-SQL &mdash; Benchmarking Cross-modal Knowledge Grounding over Enterprise Data</p>
   </header>
+
   <div class="container">
-    <h2>Test Set Results</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Model</th>
-          <th>EX (%)</th>
-          <th>VES (%)</th>
-          <th>MC (%)</th>
-          <th>Simple</th>
-          <th>Moderate</th>
-          <th>Challenging</th>
-          <th>Expert</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>GPT-4o</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Claude Sonnet</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Llama 3 70B</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>T5-3B (fine-tuned)</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>DIN-SQL + GPT-4o</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-          <td>&mdash;</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="note">
-      Baseline numbers will be populated upon release. We welcome community submissions &mdash; see the <a href="https://github.com/YIWEI-CHEN/duck-bench">GitHub repo</a> for details.
-    </div>
+
+    <!-- About -->
+    <section>
+      <h2>About DUCK</h2>
+      <div class="about-grid">
+        <div>
+          <p>
+            <strong>DUCK</strong> (<strong>D</strong>ataverse <strong>U</strong>nified <strong>C</strong>ross-modal <strong>K</strong>nowledge-grounding) is a large-scale benchmark for evaluating the ability of language models to ground natural language questions over heterogeneous enterprise data.
+          </p>
+          <p style="margin-top: 1rem;">
+            Unlike existing text-to-SQL benchmarks that focus on clean relational tables, DUCK challenges models to reason across the full spectrum of data modalities found in real-world enterprise environments &mdash; CRM records, system logs, file attachments, multi-line text fields, and meeting transcripts.
+          </p>
+          <div style="margin-top: 1.5rem;">
+            <a class="btn" href="https://github.com/YIWEI-CHEN/duck-bench">GitHub</a>
+            <a class="btn" href="#" style="opacity: 0.5; pointer-events: none;">Dataset (Coming Soon)</a>
+          </div>
+        </div>
+        <div>
+          <table>
+            <thead>
+              <tr><th>Dimension</th><th>Spider</th><th>BIRD</th><th>DUCK</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Tables</td><td>200+</td><td>95</td><td><strong>500+</strong></td></tr>
+              <tr><td>Data modality</td><td>Relational</td><td>Relational</td><td><strong>Cross-modal</strong></td></tr>
+              <tr><td>CRM data</td><td>&cross;</td><td>&cross;</td><td>&check;</td></tr>
+              <tr><td>File attachments</td><td>&cross;</td><td>&cross;</td><td>&check;</td></tr>
+              <tr><td>System logs</td><td>&cross;</td><td>&cross;</td><td>&check;</td></tr>
+              <tr><td>Multi-line text</td><td>&cross;</td><td>&cross;</td><td>&check;</td></tr>
+              <tr><td>Meeting recaps</td><td>&cross;</td><td>&cross;</td><td>&check;</td></tr>
+              <tr><td>Schema complexity</td><td>Low</td><td>Medium</td><td><strong>High</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Modalities -->
+    <section>
+      <h2>Data Modalities</h2>
+      <div class="modality-grid">
+        <div class="modality-card">
+          <h3>Large-Scale Relational Data</h3>
+          <p>Hundreds of interconnected tables with complex foreign key relationships, polymorphic joins, and hierarchical entity structures.</p>
+        </div>
+        <div class="modality-card">
+          <h3>CRM Data</h3>
+          <p>Accounts, contacts, leads, opportunities, and cases with domain-specific business semantics.</p>
+        </div>
+        <div class="modality-card">
+          <h3>Business Logic</h3>
+          <p>Tables encoding business rules, status transitions, approval workflows, and computed fields.</p>
+        </div>
+        <div class="modality-card">
+          <h3>File Attachments</h3>
+          <p>Queries requiring reasoning over metadata and content of files stored as annotations or attachments.</p>
+        </div>
+        <div class="modality-card">
+          <h3>System &amp; Audit Logs</h3>
+          <p>Structured log data capturing user actions, system events, and change history.</p>
+        </div>
+        <div class="modality-card">
+          <h3>Multi-Line Text Fields</h3>
+          <p>Rich-text and multi-line fields (notes, descriptions, email bodies) requiring text parsing within SQL context.</p>
+        </div>
+        <div class="modality-card">
+          <h3>Meeting Recaps &amp; Transcripts</h3>
+          <p>Semi-structured meeting summaries and transcripts linked to CRM entities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leaderboard -->
+    <section>
+      <h2>Leaderboard</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Model</th>
+            <th>EX (%)</th>
+            <th>VES (%)</th>
+            <th>MC (%)</th>
+            <th>Simple</th>
+            <th>Moderate</th>
+            <th>Challenging</th>
+            <th>Expert</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td><td>GPT-4o</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>2</td><td>Claude Sonnet</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>3</td><td>Llama 3 70B</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>4</td><td>T5-3B (fine-tuned)</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>5</td><td>DIN-SQL + GPT-4o</td>
+            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note">
+        Baseline numbers will be populated upon release. We welcome community submissions &mdash; see the <a href="https://github.com/YIWEI-CHEN/duck-bench">GitHub repo</a> for details.
+      </div>
+    </section>
+
   </div>
+
   <footer>
     <p>DUCK &mdash; Dataverse Unified Cross-modal Knowledge-grounding &middot; <a href="https://github.com/YIWEI-CHEN/duck-bench">GitHub</a></p>
   </footer>
