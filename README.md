@@ -81,7 +81,7 @@ duck-bench/
 │   ├── claude/
 │   ├── llama/
 │   └── t5/
-└── docs/
+└── guides/
     ├── annotation_guide.md
     ├── schema_docs.md
     └── dataverse_primer.md
@@ -226,7 +226,7 @@ uv run python scripts/submit.py \
 
 We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-- **New questions**: Follow our [annotation guide](docs/annotation_guide.md)
+- **New questions**: Follow our [annotation guide](guides/annotation_guide.md)
 - **New databases**: Submit Dataverse-compatible schema snapshots
 - **New baselines**: Add your model under `baselines/` with a config file
 - **Bug fixes**: Open an issue or PR
