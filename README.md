@@ -248,6 +248,20 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
+## TODO
+
+- [ ] Prepare Dataverse environment (dev/sandbox)
+- [ ] Design and create Dataverse tables matching benchmark schemas
+- [ ] Load benchmark data into Dataverse
+- [ ] Build Dataverse connection utilities (`tools/`)
+- [ ] Implement evaluation pipeline against live Dataverse
+- [ ] Generate benchmark questions across all 7 modalities
+- [ ] Run baseline models and populate leaderboard
+- [ ] Publish dataset to HuggingFace
+- [ ] Write and submit paper
+
+---
+
 ## License
 
 The DUCK benchmark is released under the [MIT License](LICENSE). The underlying database schemas are derived from public Dataverse documentation and sample data.
