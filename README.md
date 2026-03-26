@@ -218,7 +218,7 @@ uv run python scripts/submit.py \
   --team "YourTeam"
 ```
 
-🏆 Leaderboard: [duck-bench.github.io](https://duck-bench.github.io)
+🏆 Leaderboard: [yiwei-chen.github.io/duck-bench](https://yiwei-chen.github.io/duck-bench)
 
 ---
 
